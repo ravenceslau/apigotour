@@ -11,4 +11,4 @@
 |
 */
 
-$router->get('/teste', 'ExampleController@teste');
+$router->get('/api/pacotes', 'PacoteController@buscarPacotes');

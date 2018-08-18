@@ -13,6 +13,7 @@ Class Pacote extends Model
         'nome', 'valor', 'dataInicio', 'dataFim', 'descricao', 'urlImagem', 'site', 'telefone'
     ];
 
+    //Converte as informações de data para o formato Timestamp
     protected $casts = [
         'dataInicio' => 'Timestamp',
         'dataFim' => 'Timestamp'
