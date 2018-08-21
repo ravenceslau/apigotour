@@ -4,9 +4,9 @@ namespace App\Repositories;
 
 use App\Models\Pacote;
 use App\Repositories\PacoteRepositoryInterface;
-use Illuminate\Htpp\Request;
+use Illuminate\Http\Request;
 
-class PacoteRepositoryEloquente implements PacoteRepositoryInterface
+class PacoteRepositoryEloquent implements PacoteRepositoryInterface
 {
     private $pacote;
 

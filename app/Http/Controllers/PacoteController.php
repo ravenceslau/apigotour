@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pacote;
+use App\Repositories\PacoteRepositoryInterface;
 
 class PacoteController extends Controller
 {
@@ -11,15 +12,17 @@ class PacoteController extends Controller
      * 
      * @return void
      */
-    public function __construct()
+
+    private $pacoteRepository;
+
+    public function __construct(PacoteRepositoryInterface $pacoteRepository)
     {
-        //
+        $this->pacoteRepository = $pacoteRepository;
     }
 
-    public function buscarPacotes()
+    public function buscarTodosPacotes()
     {
-        $pacote = new Pacote();
-        return $pacote->all();
+        return $this->pacoteRepository->buscarTodosPacotes();
     }
 
 }

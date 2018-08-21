@@ -2,9 +2,11 @@
 
 namespace App\Repositories;
 
+use Illuminate\Http\Request;
+
 interface PacoteRepositoryInterface
 {
-    public function bucarTodosPacotes();
+    public function buscarTodosPacotes();
     public function buscarPacote(int $id);
     public function buscarDetalhePacote(int $id);
     public function criarPacote(Request $request);

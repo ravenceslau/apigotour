@@ -11,4 +11,4 @@
 |
 */
 
-$router->get('/api/pacotes', 'PacoteController@buscarPacotes');
+$router->get('/api/pacotes', 'PacoteController@buscarTodosPacotes');
