@@ -3,26 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pacote;
-use App\Repositories\PacoteRepositoryInterface;
+use App\Services\PacoteService;
 
 class PacoteController extends Controller
 {
+    private $pacoteService;
+
     /**
      * Create a new controller instance.
      * 
      * @return void
      */
 
-    private $pacoteRepository;
-
-    public function __construct(PacoteRepositoryInterface $pacoteRepository)
+    public function __construct(PacoteService $pacoteService)
     {
-        $this->pacoteRepository = $pacoteRepository;
+        $this->pacoteService = $pacoteService;
     }
 
     public function buscarTodosPacotes()
     {
-        return $this->pacoteRepository->buscarTodosPacotes();
+        return $this->pacoteService->buscarTodosPacotes();
     }
 
 }
