@@ -39,4 +39,9 @@ class PacoteService
     {
         return $this->pacoteRepository->editarPacote($id, $request);
     }
+
+    public function excluirPacote(int $id)
+    {
+        return $this->pacoteRepository->excluirPacote($id);
+    }
 }
