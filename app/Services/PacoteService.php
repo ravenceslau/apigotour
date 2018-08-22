@@ -24,4 +24,9 @@ class PacoteService
             return array();
         }
     }
+
+    public function buscarPacote($id)
+    {
+        return $this->pacoteRepository->buscarPacote($id);
+    }
 }
