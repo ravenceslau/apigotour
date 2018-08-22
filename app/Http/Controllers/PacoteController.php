@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pacote;
 use App\Services\PacoteService;
+use Illuminate\Http\Request;
 
 class PacoteController extends Controller
 {
@@ -28,6 +29,11 @@ class PacoteController extends Controller
     public function buscarPacote(int $id)
     {
         return $this->pacoteService->buscarPacote($id);
+    }
+
+    public function criarPacote(Request $request)
+    {
+        return $this->pacoteService->criarPacote($request);
     }
 
 }
