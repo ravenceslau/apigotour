@@ -49,6 +49,31 @@ class PacoteService
         }
     }
 
+    public function buscarDetalhePacote($id)
+    {
+        $pacote = $this->pacoteRepository->buscarDetalhePacote($id);
+
+        if(is_null($pacote)){
+            return response()->json([], Response::HTTP_NOT_FOUND);
+        }else{
+            return response()->json(
+            [
+                'id'           => $pacote->id,
+                'descricao'    => $pacote->descricao,
+                'urlImagem'    => $pacote->urlImagem,
+                'site'         => $pacote->site,
+                'telefone'     => $pacote->telefone,
+                'pacote'       => [
+                    'id'          => $pacote->id,
+                    'nome'        => $pacote->nome,
+                    'dataInicio'  => $pacote->dataInicio,
+                    'dataFim'     => $pacote->dataFim,
+                    'valor'       => $pacote->valor
+                ]  
+            ], Response::HTTP_OK);
+        }
+    }
+
     public function criarPacote(Request $request)
     {
         $validacao = Validator::make(

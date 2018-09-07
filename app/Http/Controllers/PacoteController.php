@@ -31,6 +31,11 @@ class PacoteController extends Controller
         return $this->pacoteService->buscarPacote($id);
     }
 
+    public function buscarDetalhePacote(int $id)
+    {
+        return $this->pacoteService->buscarDetalhePacote($id);
+    }
+
     public function criarPacote(Request $request)
     {
         return $this->pacoteService->criarPacote($request);
