@@ -37,6 +37,7 @@ class PacoteRepositoryEloquent implements PacoteRepositoryInterface
             'valor',
             'dataInicio',
             'dataFim',
+            'descricao',
             'urlImagem'
         )
         ->where('id', $id)
